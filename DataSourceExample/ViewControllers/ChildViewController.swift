@@ -35,8 +35,6 @@ class ChildViewController: UIViewController {
 
 	/// Register cells, set estimated size, etc.
 	private func configureTableView() {
-		CityTableViewCell.register(in: tableView)
-		RegionTableViewCell.register(in: tableView)
 		tableView.delegate = self
 		// Don't show empty cells
 		tableView.tableFooterView = UIView()
@@ -48,7 +46,7 @@ class ChildViewController: UIViewController {
 	}
 
 	private func makeDataSource() {
-		let citiesDataSource = TableViewDataSource(models: country.cities, reuseIdentifier: CityTableViewCell.identifier) { (city, cell) in
+		let citiesDataSource = TableViewDataSource(models: country.cities.sorted(by: { $0.population > $1.population }), reuseIdentifier: CityTableViewCell.identifier) { (city, cell) in
 			cell.textLabel?.text = city.name
 			cell.detailTextLabel?.text = "Population: \(city.population) millions"
 		}
@@ -57,10 +55,10 @@ class ChildViewController: UIViewController {
 			switch region.type {
 			case .agricultural:
 				cell.contentView.backgroundColor = .blue
-				cell.detailTextLabel?.text = "Agriculture 🍎"
+				cell.detailTextLabel?.text = "🍎"
 			case .industrial:
 				cell.contentView.backgroundColor = .yellow
-				cell.detailTextLabel?.text = "Indusrty 💡"
+				cell.detailTextLabel?.text = "💡"
 			}
 		}
 		dataSource = SectionedTableViewDataSource(dataSources: [citiesDataSource, regionsDataSource])

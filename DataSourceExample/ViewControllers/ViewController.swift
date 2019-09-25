@@ -24,7 +24,6 @@ class ViewController: UIViewController {
 
 	/// Register cells, set estimated size, etc.
 	private func configureTableView() {
-		CountryTableViewCell.register(in: tableView)
 		tableView.delegate = self
 		// Don't show empty cells
 		tableView.tableFooterView = UIView()
