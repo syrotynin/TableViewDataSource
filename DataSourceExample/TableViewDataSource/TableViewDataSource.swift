@@ -8,19 +8,15 @@
 
 import UIKit
 
-class TableViewDataSource<Model>: NSObject, UITableViewDataSource {
-	typealias CellConfigurator = (Model, UITableViewCell) -> Void
+class TableViewDataSource<Model, Cell: ReusableTableCell>: NSObject, UITableViewDataSource {
+	typealias CellConfigurator = (Model, Cell) -> Void
 
 	let models: [Model]
 
-	private let reuseIdentifier: String
 	private let cellConfigurator: CellConfigurator
 
-	init(models: [Model],
-		 reuseIdentifier: String,
-		 cellConfigurator: @escaping CellConfigurator) {
+	init(models: [Model], _ cellConfigurator: @escaping CellConfigurator) {
 		self.models = models
-		self.reuseIdentifier = reuseIdentifier
 		self.cellConfigurator = cellConfigurator
 	}
 
@@ -30,10 +26,10 @@ class TableViewDataSource<Model>: NSObject, UITableViewDataSource {
 
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let model = models[indexPath.row]
-		let cell = tableView.dequeueReusableCell(
-			withIdentifier: reuseIdentifier,
-			for: indexPath
-		)
+		guard let cell = tableView.dequeueReusableCell(withIdentifier: Cell.identifier, for: indexPath) as? Cell else {
+			assertionFailure("Cell configuration failed")
+			return UITableViewCell()
+		}
 
 		cellConfigurator(model, cell)
 

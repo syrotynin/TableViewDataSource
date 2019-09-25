@@ -46,11 +46,11 @@ class ChildViewController: UIViewController {
 	}
 
 	private func makeDataSource() {
-		let citiesDataSource = TableViewDataSource(models: country.cities.sorted(by: { $0.population > $1.population }), reuseIdentifier: CityTableViewCell.identifier) { (city, cell) in
+		let citiesDataSource = TableViewDataSource<City, CityTableViewCell>(models: country.cities.sorted(by: { $0.population > $1.population })) { (city, cell) in
 			cell.textLabel?.text = city.name
 			cell.detailTextLabel?.text = "Population: \(city.population) millions"
 		}
-		let regionsDataSource = TableViewDataSource(models: country.regions, reuseIdentifier: RegionTableViewCell.identifier) { (region, cell) in
+		let regionsDataSource = TableViewDataSource<Region, RegionTableViewCell>(models: country.regions) { (region, cell) in
 			cell.textLabel?.text = region.name
 			switch region.type {
 			case .agricultural:

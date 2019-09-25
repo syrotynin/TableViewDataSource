@@ -13,7 +13,7 @@ class ViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 
 	var countriesAPI: CountriesAPI = CountriesAPIMock()
-	var dataSource: TableViewDataSource<Country>!
+	var dataSource: TableViewDataSource<Country, CountryTableViewCell>!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -54,12 +54,8 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension TableViewDataSource where Model == Country {
-	static func make(for countries: [Country],
-					 reuseIdentifier: String = CountryTableViewCell.identifier) -> TableViewDataSource {
-		return TableViewDataSource(
-			models: countries,
-			reuseIdentifier: reuseIdentifier
-		) { (country, cell) in
+	static func make(for countries: [Country]) -> TableViewDataSource {
+		return TableViewDataSource(models: countries) { (country, cell) in
 			cell.textLabel?.text = country.name
 			cell.detailTextLabel?.text = "\(country.cities.count) cities & \(country.regions.count) regions"
 		}
