@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9244F6B2233E510C00CA691B /* UITableView+Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244F6B1233E510C00CA691B /* UITableView+Header.swift */; };
+		9244F6B7233E51A400CA691B /* HeaderMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244F6B6233E51A400CA691B /* HeaderMessageView.swift */; };
+		9244F6B9233E51B000CA691B /* HeaderMessageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9244F6B8233E51B000CA691B /* HeaderMessageView.xib */; };
+		9244F6BB233E542900CA691B /* UIView+FromNib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9244F6BA233E542900CA691B /* UIView+FromNib.swift */; };
 		92E10685233A58B700826CE8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E10684233A58B700826CE8 /* AppDelegate.swift */; };
 		92E10687233A58B700826CE8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92E10686233A58B700826CE8 /* ViewController.swift */; };
 		92E1068A233A58B700826CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92E10688233A58B700826CE8 /* Main.storyboard */; };
@@ -39,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9244F6B1233E510C00CA691B /* UITableView+Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Header.swift"; sourceTree = "<group>"; };
+		9244F6B6233E51A400CA691B /* HeaderMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderMessageView.swift; sourceTree = "<group>"; };
+		9244F6B8233E51B000CA691B /* HeaderMessageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeaderMessageView.xib; sourceTree = "<group>"; };
+		9244F6BA233E542900CA691B /* UIView+FromNib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FromNib.swift"; sourceTree = "<group>"; };
 		92E10681233A58B700826CE8 /* DataSourceExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataSourceExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92E10684233A58B700826CE8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		92E10686233A58B700826CE8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +90,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9244F6B0233E509100CA691B /* TableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				9244F6B3233E516600CA691B /* HeaderMessageView */,
+			);
+			path = TableViewHeader;
+			sourceTree = "<group>";
+		};
+		9244F6B3233E516600CA691B /* HeaderMessageView */ = {
+			isa = PBXGroup;
+			children = (
+				9244F6B6233E51A400CA691B /* HeaderMessageView.swift */,
+				9244F6B8233E51B000CA691B /* HeaderMessageView.xib */,
+			);
+			path = HeaderMessageView;
+			sourceTree = "<group>";
+		};
+		9244F6BC233E556200CA691B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				9244F6BA233E542900CA691B /* UIView+FromNib.swift */,
+				9244F6B1233E510C00CA691B /* UITableView+Header.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		92E10678233A58B700826CE8 = {
 			isa = PBXGroup;
 			children = (
@@ -104,13 +138,15 @@
 			isa = PBXGroup;
 			children = (
 				92E106C2233B639700826CE8 /* API */,
+				9244F6BC233E556200CA691B /* Extensions */,
 				92E106BB233B5F1F00826CE8 /* Models */,
-				92E106B1233B5E0800826CE8 /* ViewControllers */,
 				92E106A8233A591C00826CE8 /* TableViewDataSource */,
+				9244F6B0233E509100CA691B /* TableViewHeader */,
+				92E106B1233B5E0800826CE8 /* ViewControllers */,
+				92E10690233A58B700826CE8 /* Info.plist */,
 				92E10684233A58B700826CE8 /* AppDelegate.swift */,
 				92E1068B233A58B700826CE8 /* Assets.xcassets */,
 				92E1068D233A58B700826CE8 /* LaunchScreen.storyboard */,
-				92E10690233A58B700826CE8 /* Info.plist */,
 			);
 			path = DataSourceExample;
 			sourceTree = "<group>";
@@ -275,6 +311,7 @@
 				92E1068F233A58B700826CE8 /* LaunchScreen.storyboard in Resources */,
 				92E1068C233A58B700826CE8 /* Assets.xcassets in Resources */,
 				92E1068A233A58B700826CE8 /* Main.storyboard in Resources */,
+				9244F6B9233E51B000CA691B /* HeaderMessageView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,11 +336,14 @@
 				92E106C1233B604300826CE8 /* Country.swift in Sources */,
 				92E106C6233B642E00826CE8 /* CountriesAPIMock.swift in Sources */,
 				92E106C4233B63A700826CE8 /* CountriesAPI.swift in Sources */,
+				9244F6B7233E51A400CA691B /* HeaderMessageView.swift in Sources */,
 				92E106BA233B5F1A00826CE8 /* RegionTableViewCell.swift in Sources */,
+				9244F6B2233E510C00CA691B /* UITableView+Header.swift in Sources */,
 				92E106B0233B31A600826CE8 /* SectionedTableViewDataSource.swift in Sources */,
 				92E106AB233A5A9500826CE8 /* Reusable.swift in Sources */,
 				92E106B6233B5EFE00826CE8 /* CountryTableViewCell.swift in Sources */,
 				92E106BD233B5F7800826CE8 /* City.swift in Sources */,
+				9244F6BB233E542900CA691B /* UIView+FromNib.swift in Sources */,
 				92E106A7233A591800826CE8 /* TableViewDataSource.swift in Sources */,
 				92E10687233A58B700826CE8 /* ViewController.swift in Sources */,
 				92E10685233A58B700826CE8 /* AppDelegate.swift in Sources */,

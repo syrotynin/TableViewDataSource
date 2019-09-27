@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="HeaderMessageView" customModule="DataSourceExample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="417" height="250"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzh-9A-Ghz">
+                    <rect key="frame" x="24" y="68" width="369" height="124"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y12-w9-EKa">
+                            <rect key="frame" x="16" y="16" width="337" height="92"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.098039215690000001" green="0.66666666669999997" blue="0.97254901959999995" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="y12-w9-EKa" secondAttribute="bottom" constant="16" id="1l0-km-auS"/>
+                        <constraint firstItem="y12-w9-EKa" firstAttribute="top" secondItem="bzh-9A-Ghz" secondAttribute="top" constant="16" id="67w-eA-DBl"/>
+                        <constraint firstItem="y12-w9-EKa" firstAttribute="leading" secondItem="bzh-9A-Ghz" secondAttribute="leading" constant="16" id="Eed-6B-EIl"/>
+                        <constraint firstAttribute="trailing" secondItem="y12-w9-EKa" secondAttribute="trailing" constant="16" id="WE4-3p-251"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="bzh-9A-Ghz" secondAttribute="bottom" constant="24" id="1Gw-rR-VsJ"/>
+                <constraint firstItem="bzh-9A-Ghz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="24" id="U9I-uo-dEc"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bzh-9A-Ghz" secondAttribute="trailing" constant="24" id="Wuq-vY-3pB"/>
+                <constraint firstItem="bzh-9A-Ghz" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="24" id="pnd-wE-6oj"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <connections>
+                <outlet property="contentView" destination="bzh-9A-Ghz" id="L75-Mn-TB2"/>
+                <outlet property="messageLabel" destination="y12-w9-EKa" id="Dux-hv-mDd"/>
+            </connections>
+            <point key="canvasLocation" x="139.85507246376812" y="346.20535714285711"/>
+        </view>
+    </objects>
+</document>

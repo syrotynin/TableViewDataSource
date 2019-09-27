@@ -19,7 +19,17 @@ class ViewController: UIViewController {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view.
 		configureTableView()
+	}
+
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
 		updateUI()
+	}
+
+	override func viewWillDisappear(_ animated: Bool) {
+		super.viewWillDisappear(animated)
+
+		tableView.hideMessage()
 	}
 
 	/// Register cells, set estimated size, etc.
@@ -42,6 +52,8 @@ class ViewController: UIViewController {
 		self.dataSource = .make(for: countries)
 		tableView.dataSource = dataSource
 		tableView.reloadData()
+
+		tableView.showHeaderMessage(with: "Hello, World!")
 	}
 }
 
